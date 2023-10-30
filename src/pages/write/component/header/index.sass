@@ -1,0 +1,39 @@
+
+.editor-header
+  padding: 15px 0
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: #fff
+  .title-input
+    flex: 1
+  .save-button
+    min-width: 250px
+    display: flex
+    justify-content: flex-start
+    margin-right: 1rem
+    .save-status
+      display: flex
+      justify-content: space-between
+      align-items: center
+      > :last-child
+        margin-left: 10px
+    > *:not(:last-child)
+      margin-right: 1.3rem
+    @media screen and (max-width: 600px)
+      display: none
+  .avatar
+    margin-right: 1rem
+    @media screen and (max-width: 480px)
+      display: none
+
+.form
+  .group
+    margin-right: 7px
+    margin-bottom: 8px
+
+.tag
+  pointer-events: none
+  font-size: 14px
+  transform-origin: 0 0
+  transform: scale(0.9, 0.9) translateX(2px)

@@ -1,0 +1,100 @@
+$black01: rgba(0, 0, 0, .1)
+
+$screenSizeMax: 1270px // 开始变化的最大像素
+$phoneScreenMaxSize: 650px // 手机屏幕默认最大像素
+$menuMissSize: 740px // menu 消失最大像素
+
+
+.main-header
+  position: relative
+  height: 64px
+  .header
+    width: 100vw
+    height: 64px
+    box-shadow: 0 2px 2px $black01
+    //position: sticky
+    //top: 0
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 100
+    box-sizing: border-box
+    background-color: #fff
+    //transform: translateY(-100%)
+    //transition: all .5s linear
+    //&.visible
+    //  transform: translate(0, 0)
+    .container
+      max-width: 1440px
+      height: 100%
+      display: flex
+      flex-direction: row
+      align-items: center
+      margin: auto
+      .main-href
+        height: 22px
+        padding: 0 20px
+        font-size: 0
+        .img
+          height: 22px
+      .nav-list
+        flex: 1
+        display: flex
+        justify-content: space-between
+        align-items: center
+        @media screen and (max-width: $menuMissSize)
+          justify-content: flex-end
+        .menu
+          width: 40%
+          height: 64px
+          line-height: 64px
+          font-size: 15px
+          > li
+            padding: 0 12px !important
+          *::after
+            left: 12px !important
+            right: 12px !important
+          @media screen and (max-width: $screenSizeMax)
+            display: none
+        .drop-menu
+          @media screen and (min-width: $screenSizeMax) , (max-width: $menuMissSize)
+            display: none
+        .rest-box
+          padding: 0 10px
+          display: flex
+          align-items: center
+          justify-self: flex-end
+          .search-content
+            min-width: 240px
+            display: flex
+            justify-content: space-between
+            margin-right: 12px
+            overflow: hidden
+            .left
+              position: relative
+              .search-history
+                position: absolute
+                width: 100%
+                top: 34px
+                z-index: 10
+                .history-header
+                  display: flex
+                  justify-content: space-between
+                  align-items: center
+            .right
+              margin-left: 12px
+              overflow: hidden
+              @media screen and (max-width: 800px)
+                display: none
+
+// Main lay-mode menu
+.lay-menu
+  display: block
+  width: 120px
+  font-size: 18px
+  text-align: center
+  line-height: 40px
+
+.divider
+  margin: 12px 0
